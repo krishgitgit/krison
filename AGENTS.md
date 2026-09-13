@@ -1,9 +1,74 @@
-<!-- BEGIN:nextjs-agent-rules -->
+# # KRISON — AI AGENT INSTRUCTIONS
 
-# This is NOT the Next.js you know
+## Project
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+KRISON is a manufacturer and exporter of road-marking equipment.
 
-This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+This website is primarily a premium product showcase and company website.
 
-<!-- END:nextjs-agent-rules -->
+It is NOT:
+
+- A SaaS application
+
+- An ecommerce store
+
+- A dashboard
+
+- A web application requiring user accounts
+
+## Source of Truth
+
+The KRISON product brochures supplied with this project are the authoritative source for product information.
+
+Never invent:
+
+- Technical specifications
+
+- Product capabilities
+
+- Certifications
+
+- Customer numbers
+
+- Countries
+
+- Testimonials
+
+- Company history
+
+- Manufacturing claims
+
+If information is unavailable, use:
+
+"Contact KRISON for details."
+
+## Brand
+
+Use the supplied KRISON logo exactly.
+
+Do not redraw, reinterpret or modify the logo geometry.
+
+The primary brand color is KRISON RED.
+
+## Design
+
+Use the rules defined in [DESIGN.md](http://DESIGN.md).
+
+## Product Information
+
+Use [PRODUCT.md](http://PRODUCT.md) as the structured product information source.
+
+## Development
+
+Follow [TECH.md](http://TECH.md) for technical architecture.
+
+## Content
+
+Follow [CONTENT.md](http://CONTENT.md) for website copy and terminology.
+
+## General Rule
+
+Before making significant design or architectural changes, inspect the existing project and preserve established patterns.
+
+Do not introduce unnecessary dependencies or complexity.
+
