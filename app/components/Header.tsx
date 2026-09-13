@@ -3,22 +3,31 @@
 import Image from "next/image";
 import { useState } from "react";
 
-const navItems = ["Products", "Solutions", "History", "Contact"] as const;
+const navItems = [
+  { label: "Products", href: "#" },
+  { label: "Solutions", href: "#" },
+  { label: "History", href: "#about" },
+  { label: "Contact", href: "#" },
+] as const;
 
 export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="absolute inset-x-0 top-0 z-40 px-4 pt-4">
-      <div className="relative flex w-full items-center">
-        <a href="#top" className="relative z-10 shrink-0" aria-label="KRISON home">
+    <header className="fixed inset-x-0 top-0 z-40 bg-[rgb(255_255_255_/_var(--krison-nav,0))] px-4 pt-4 pb-6 shadow-[0_12px_28px_rgb(18_20_23_/_calc(var(--krison-nav)_*_0.14))]">
+      <div className="relative flex h-12 w-full items-center sm:h-14">
+        <a
+          href="#top"
+          className="relative z-10 flex h-12 shrink-0 items-center sm:h-14"
+          aria-label="KRISON home"
+        >
           <Image
             src="/logo/krison_logo_red.svg"
             alt="KRISON"
             width={212}
             height={74}
             priority
-            className="h-12 w-auto sm:h-14"
+            className="h-[3.3rem] w-auto sm:h-[3.85rem]"
           />
         </a>
 
@@ -26,18 +35,18 @@ export default function Header() {
           <nav className="flex items-center gap-13 lg:gap-14" aria-label="Primary">
             {navItems.map((item) => (
               <a
-                key={item}
-                href="#"
-                className="group relative inline-flex items-center py-1 text-sm font-medium tracking-[0.04em] text-asphalt"
+                key={item.label}
+                href={item.href}
+                className="group relative inline-flex items-center py-1 text-[0.9625rem] font-medium tracking-[0.04em] text-asphalt"
               >
-                {item}
+                {item.label}
                 <span className="pointer-events-none absolute inset-x-0 bottom-0 h-px origin-center scale-x-0 bg-krison transition-transform duration-300 ease-out group-hover:scale-x-100 group-focus-visible:scale-x-100" />
               </a>
             ))}
           </nav>
           <button
             type="button"
-            className="inline-flex shrink-0 items-center gap-1 rounded-sm bg-krison px-6 py-3 text-sm font-medium text-white transition-colors duration-200 hover:bg-krison-deep"
+            className="inline-flex shrink-0 items-center gap-1 rounded-sm bg-krison px-[1.65rem] py-3 text-[0.9625rem] font-medium text-white transition-colors duration-200 hover:bg-krison-deep"
           >
             Get Quote <span aria-hidden>→</span>
           </button>
@@ -46,7 +55,7 @@ export default function Header() {
         <div className="ml-auto flex items-center gap-4 md:hidden">
           <button
             type="button"
-            className="inline-flex items-center gap-1 rounded-sm bg-krison px-5 py-2.5 text-sm font-medium text-white transition-colors duration-200 hover:bg-krison-deep"
+            className="inline-flex items-center gap-1 rounded-sm bg-krison px-[1.375rem] py-2.5 text-[0.9625rem] font-medium text-white transition-colors duration-200 hover:bg-krison-deep"
           >
             Get Quote <span aria-hidden>→</span>
           </button>
@@ -58,10 +67,10 @@ export default function Header() {
             onClick={() => setOpen((value) => !value)}
           >
             <span className="sr-only">Menu</span>
-            <span className="flex flex-col gap-1.5" aria-hidden>
-              <span className="block h-px w-4 bg-asphalt" />
-              <span className="block h-px w-4 bg-asphalt" />
-              <span className="block h-px w-4 bg-asphalt" />
+            <span className="flex flex-col gap-[0.4125rem]" aria-hidden>
+              <span className="block h-px w-[1.1rem] bg-asphalt" />
+              <span className="block h-px w-[1.1rem] bg-asphalt" />
+              <span className="block h-px w-[1.1rem] bg-asphalt" />
             </span>
           </button>
         </div>
@@ -73,14 +82,14 @@ export default function Header() {
           className="mt-4 flex flex-col gap-3 md:hidden"
           aria-label="Mobile"
         >
-          {navItems.map((item) => (
-            <a
-              key={item}
-              href="#"
-              className="group w-fit text-sm font-medium tracking-[0.04em] text-asphalt"
-              onClick={() => setOpen(false)}
-            >
-              {item}
+            {navItems.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="group w-fit text-[0.9625rem] font-medium tracking-[0.04em] text-asphalt"
+                onClick={() => setOpen(false)}
+              >
+                {item.label}
               <span className="mt-1 block h-px w-0 bg-krison transition-[width] duration-300 ease-out group-hover:w-full" />
             </a>
           ))}

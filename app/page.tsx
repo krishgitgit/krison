@@ -1,4 +1,5 @@
 import Header from "./components/Header";
+import ScrollStage from "./components/ScrollStage";
 
 export default function Home() {
   return (
@@ -6,6 +7,7 @@ export default function Home() {
       <Header />
 
       <main id="top" className="flex-1">
+        <ScrollStage>
         <section className="relative min-h-[100svh] overflow-hidden bg-off-white text-asphalt">
           {/* eslint-disable-next-line @next/next/no-img-element -- serve KIHERO.webp directly so file replacements are not stuck in Next image cache */}
           <img
@@ -14,12 +16,12 @@ export default function Home() {
             className="absolute inset-0 h-full w-full object-cover object-[42%_70%] sm:object-[62%_55%] lg:object-[68%_center]"
           />
 
-          <div className="relative z-10 mx-auto flex min-h-[100svh] w-full max-w-[1400px] flex-col px-5 pb-10 pt-24 sm:px-8 sm:pt-28 lg:px-8">
+          <div className="hero-copy relative z-10 mx-auto flex min-h-[100svh] w-full max-w-[1400px] flex-col px-5 pb-10 pt-24 sm:px-8 sm:pt-28 lg:px-8">
             <div className="max-w-[20rem] sm:max-w-md lg:max-w-lg">
               <h1 className="hero-rise hero-rise-1 font-display text-[clamp(3.1rem,8.5vw,5.75rem)] leading-[0.9] font-normal tracking-[-0.03em] text-balance">
                 <span className="block">Built for</span>
-                <span className="block">Straighter</span>
-                <span className="block text-krison italic">Tomorrows.</span>
+                <span className="block text-krison italic">Straighter</span>
+                <span className="block text-asphalt">Tomorrows.</span>
               </h1>
               <p className="hero-rise hero-rise-2 mt-7 max-w-[36ch] text-[1.0625rem] leading-[1.6] font-normal text-asphalt/80 sm:text-lg sm:leading-[1.65]">
                 KRISON manufactures high-performance road-marking equipment
@@ -43,6 +45,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+        </ScrollStage>
       </main>
     </div>
   );
