@@ -35,12 +35,6 @@ export default function Home() {
                   Explore Products
                   <span aria-hidden>→</span>
                 </button>
-                <button
-                  type="button"
-                  className="inline-flex items-center rounded-sm border border-asphalt/50 bg-transparent px-8 py-4 text-[15px] font-medium text-asphalt transition-colors duration-200 hover:border-asphalt"
-                >
-                  Request a Quote
-                </button>
               </div>
             </div>
           </div>
