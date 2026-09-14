@@ -31,10 +31,11 @@
   --color-marking: var(--marking);
   --font-sans: var(--font-source-sans);
   --font-display: var(--font-instrument);
+  --font-caption: var(--font-inter);
 }
 
-@utility font-display {
-  font-family: var(--font-display), "Instrument Serif", serif;
+@utility font-caption {
+  font-family: var(--font-caption), "Helvetica Neue", Helvetica, sans-serif;
 }
 
 html {

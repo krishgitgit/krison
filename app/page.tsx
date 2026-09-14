@@ -23,11 +23,15 @@ export default function Home() {
                 <span className="block text-krison italic">Straighter</span>
                 <span className="block text-asphalt">Tomorrows.</span>
               </h1>
-              <p className="hero-rise hero-rise-2 mt-7 max-w-[36ch] text-[1.0625rem] leading-[1.6] font-normal text-asphalt/80 sm:text-lg sm:leading-[1.65]">
-                KRISON manufactures high-performance road-marking equipment
-                designed for demanding pavement marking applications.
+              <p className="font-caption hero-rise hero-rise-2 mt-7 text-[15px] leading-snug text-asphalt">
+                <span className="block font-medium tracking-[0.2em] uppercase">
+                  ROAD-MARKING EQUIPMENT
+                </span>
+                <span className="mt-1.5 block font-normal tracking-[0.06em]">
+                  Engineered for precision. Built for demanding roads.
+                </span>
               </p>
-              <div className="hero-rise hero-rise-3 mt-9 flex flex-wrap items-center gap-4">
+              <div className="hero-rise hero-rise-3 mt-7">
                 <button
                   type="button"
                   className="inline-flex items-center gap-2 rounded-sm bg-krison px-8 py-4 text-[15px] font-medium text-white transition-colors duration-200 hover:bg-krison-deep"
