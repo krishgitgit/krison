@@ -20,7 +20,7 @@ export default function Home() {
             <div className="max-w-[20rem] sm:max-w-md lg:max-w-lg">
               <h1 className="hero-rise hero-rise-1 font-display text-[clamp(3.1rem,8.5vw,5.75rem)] leading-[0.9] font-normal tracking-[-0.03em] text-balance">
                 <span className="block">Built for</span>
-                <span className="block text-krison italic">Straighter</span>
+                <span className="block text-krison italic">Safer</span>
                 <span className="block text-asphalt">Tomorrows.</span>
               </h1>
               <p className="font-caption hero-rise hero-rise-2 mt-7 text-[15px] leading-snug text-asphalt">
