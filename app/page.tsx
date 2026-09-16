@@ -1,5 +1,6 @@
 import Header from "./components/Header";
 import ScrollStage from "./components/ScrollStage";
+import TrustMarquee from "./components/TrustMarquee";
 
 export default function Home() {
   return (
@@ -44,6 +45,8 @@ export default function Home() {
           </div>
         </section>
         </ScrollStage>
+
+        <TrustMarquee />
       </main>
     </div>
   );
