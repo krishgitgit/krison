@@ -117,7 +117,7 @@ export default function TrustMarquee() {
           <span className="h-px flex-1 bg-black/[0.12]" aria-hidden="true" />
           <h2 className="font-display text-[clamp(1.85rem,4.5vw,3.85rem)] font-normal leading-[1.1] tracking-[-0.025em] text-asphalt text-center">
             &ldquo;trusted by{" "}
-            <span className="text-krison italic">roads</span> all around the{" "}
+            <span className="text-krison italic">road contractors</span> all around the{" "}
             <span className="text-krison italic">globe</span>&rdquo;
           </h2>
           <span className="h-px flex-1 bg-black/[0.12]" aria-hidden="true" />
