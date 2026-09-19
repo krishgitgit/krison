@@ -11,7 +11,7 @@ const sourceSans = Source_Sans_3({
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 const instrumentSerif = Instrument_Serif({

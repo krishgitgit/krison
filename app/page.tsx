@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import ScrollStage from "./components/ScrollStage";
 import TrustMarquee from "./components/TrustMarquee";
+import AboutStage from "./components/AboutStage";
 
 export default function Home() {
   return (
@@ -8,8 +9,9 @@ export default function Home() {
       <Header />
 
       <main id="top" className="flex-1">
-        <ScrollStage>
-        <section className="relative min-h-[100svh] overflow-hidden bg-off-white text-asphalt">
+        {/* Landing Page (Hero Section) */}
+        <section className="relative min-h-[100svh] overflow-hidden bg-off-white text-asphalt flex flex-col justify-between">
+          {/* Landing page background image */}
           {/* eslint-disable-next-line @next/next/no-img-element -- serve KIHERO.webp directly so file replacements are not stuck in Next image cache */}
           <img
             src="/assets/KIHERO.webp?v=20260913-2116"
@@ -17,7 +19,18 @@ export default function Home() {
             className="absolute inset-0 h-full w-full object-cover object-[42%_70%] sm:object-[62%_55%] lg:object-[68%_center]"
           />
 
-          <div className="hero-copy relative z-10 mx-auto flex min-h-[100svh] w-full max-w-[1400px] flex-col px-5 pb-10 pt-24 sm:px-8 sm:pt-28 lg:px-8">
+          {/* Subtle boundary fade right at the bottom edge of the image */}
+          <div
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-16 sm:h-20 md:h-24 z-[5]"
+            style={{
+              background:
+                "linear-gradient(to bottom, rgba(244, 243, 240, 0) 0%, rgba(244, 243, 240, 0.25) 45%, rgba(244, 243, 240, 0.7) 75%, #f4f3f0 100%)",
+            }}
+            aria-hidden="true"
+          />
+
+          {/* Hero Copy */}
+          <div className="hero-copy relative z-10 mx-auto flex min-h-[100svh] w-full max-w-[1400px] flex-col px-5 pb-16 pt-24 sm:px-8 sm:pt-28 lg:px-8">
             <div className="max-w-[20rem] sm:max-w-md lg:max-w-lg">
               <h1 className="hero-rise hero-rise-1 font-display text-[clamp(3.1rem,8.5vw,5.75rem)] leading-[0.9] font-normal tracking-[-0.03em] text-balance">
                 <span className="block">Built for</span>
@@ -35,7 +48,7 @@ export default function Home() {
               <div className="hero-rise hero-rise-3 mt-7">
                 <button
                   type="button"
-                  className="inline-flex items-center gap-2 rounded-sm bg-krison px-8 py-4 text-[15px] font-medium text-white transition-colors duration-200 hover:bg-krison-deep"
+                  className="inline-flex items-center gap-2 rounded-sm bg-krison px-8 py-4 text-[15px] font-medium text-white transition-colors duration-200 hover:bg-krison-deep cursor-pointer"
                 >
                   Explore Products
                   <span aria-hidden>→</span>
@@ -44,9 +57,15 @@ export default function Home() {
             </div>
           </div>
         </section>
-        </ScrollStage>
 
+        {/* Scroll Stage: Brand philosophy statement on white background */}
+        <ScrollStage />
+
+        {/* Credentials & Trust Marquee */}
         <TrustMarquee />
+
+        {/* About Us Stage */}
+        <AboutStage />
       </main>
     </div>
   );

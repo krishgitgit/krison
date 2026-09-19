@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const navItems = [
   { label: "Products", href: "#" },
@@ -12,9 +12,25 @@ const navItems = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 24);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-40 bg-[rgb(255_255_255_/_var(--krison-nav,0))] px-4 pt-4 pb-6 shadow-[0_12px_28px_rgb(18_20_23_/_calc(var(--krison-nav)_*_0.14))]">
+    <header
+      className={`fixed inset-x-0 top-0 z-40 px-4 pt-3.5 pb-4.5 sm:px-6 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/95 backdrop-blur-md shadow-[0_6px_24px_-4px_rgba(18,20,23,0.08)]"
+          : "bg-transparent shadow-none"
+      }`}
+    >
       <div className="relative flex h-12 w-full items-center sm:h-14">
         <a
           href="#top"

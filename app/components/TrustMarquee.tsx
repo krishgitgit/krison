@@ -109,7 +109,7 @@ export default function TrustMarquee() {
     <section
       id="credentials"
       aria-label="Accreditations and global presence"
-      className="relative z-30 w-full overflow-hidden bg-off-white pt-20 pb-24 sm:pt-28 sm:pb-32 lg:pt-32 lg:pb-36"
+      className="relative z-30 w-full overflow-hidden bg-off-white pt-20 pb-8 sm:pt-28 sm:pb-10 lg:pt-32 lg:pb-12"
     >
       {/* Universal Big Header in Roman Serif with extending horizontal divider lines */}
       <div className="mx-auto max-w-7xl px-5 sm:px-8">

@@ -11,6 +11,7 @@
   --off-white: #f4f3f0;
   --steel: #6b7078;
   --sky: #4a6d8c;
+  --rich-blue: #4169e1;
   --marking: #f5f5f2;
   --background: var(--off-white);
   --foreground: var(--asphalt);
@@ -28,6 +29,7 @@
   --color-off-white: var(--off-white);
   --color-steel: var(--steel);
   --color-sky: var(--sky);
+  --color-rich-blue: var(--rich-blue);
   --color-marking: var(--marking);
   --font-sans: var(--font-source-sans);
   --font-display: var(--font-instrument);
@@ -36,6 +38,13 @@
 
 @utility font-caption {
   font-family: var(--font-caption), "Helvetica Neue", Helvetica, sans-serif;
+}
+
+@utility font-ios {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "SF Pro", var(--font-inter), -system-ui, "Helvetica Neue", sans-serif;
+  letter-spacing: -0.016em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html {
@@ -48,40 +57,7 @@ body {
   font-family: var(--font-sans), "Source Sans 3", sans-serif;
 }
 
-.scroll-sticky img {
-  transform: translateZ(0);
-}
 
-.scroll-hero {
-  transform: translateZ(0);
-  filter: blur(calc(var(--krison-p, 0) * 18px))
-    brightness(calc(1 - var(--krison-p, 0) * 0.18));
-}
-
-.liquid-mass {
-  top: 0;
-  left: -5%;
-  width: 110%;
-  height: 100%;
-}
-
-.liquid-mass-core {
-  inset: 0;
-  transform-origin: top center;
-  will-change: transform;
-  filter: url("#krison-gas");
-  transform: scaleY(calc(var(--krison-p, 0) * 1.12));
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .liquid-mass {
-    display: none;
-  }
-
-  .scroll-hero {
-    filter: blur(calc(var(--krison-p, 0) * 10px));
-  }
-}
 
 ::selection {
   background: var(--selection);
