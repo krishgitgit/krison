@@ -16,7 +16,7 @@ export default function Header() {
 
   useEffect(() => {
     const onScroll = () => {
-      setScrolled(window.scrollY > 24);
+      setScrolled(window.scrollY > 20);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -25,9 +25,9 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-40 px-4 pt-3.5 pb-4.5 sm:px-6 transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-40 px-4 pt-4 pb-6 transition-all duration-300 ${
         scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-[0_6px_24px_-4px_rgba(18,20,23,0.08)]"
+          ? "bg-white/95 backdrop-blur-md shadow-[0_12px_28px_rgb(18_20_23_/_0.14)]"
           : "bg-transparent shadow-none"
       }`}
     >
@@ -62,7 +62,7 @@ export default function Header() {
           </nav>
           <button
             type="button"
-            className="inline-flex shrink-0 items-center gap-1 rounded-sm bg-krison px-[1.65rem] py-3 text-[0.9625rem] font-medium text-white transition-colors duration-200 hover:bg-krison-deep"
+            className="inline-flex shrink-0 items-center gap-1 rounded-sm bg-krison px-[1.65rem] py-3 text-[0.9625rem] font-medium text-white transition-colors duration-200 hover:bg-krison-deep cursor-pointer"
           >
             Get Quote <span aria-hidden>→</span>
           </button>
@@ -71,13 +71,13 @@ export default function Header() {
         <div className="ml-auto flex items-center gap-4 md:hidden">
           <button
             type="button"
-            className="inline-flex items-center gap-1 rounded-sm bg-krison px-[1.375rem] py-2.5 text-[0.9625rem] font-medium text-white transition-colors duration-200 hover:bg-krison-deep"
+            className="inline-flex items-center gap-1 rounded-sm bg-krison px-[1.375rem] py-2.5 text-[0.9625rem] font-medium text-white transition-colors duration-200 hover:bg-krison-deep cursor-pointer"
           >
             Get Quote <span aria-hidden>→</span>
           </button>
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center text-asphalt"
+            className="inline-flex h-10 w-10 items-center justify-center text-asphalt cursor-pointer"
             aria-expanded={open}
             aria-controls="mobile-nav"
             onClick={() => setOpen((value) => !value)}
@@ -95,17 +95,17 @@ export default function Header() {
       {open ? (
         <nav
           id="mobile-nav"
-          className="mt-4 flex flex-col gap-3 md:hidden"
+          className="mt-4 flex flex-col gap-3 md:hidden bg-white/95 backdrop-blur-md rounded-lg p-4 shadow-lg"
           aria-label="Mobile"
         >
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="group w-fit text-[0.9625rem] font-medium tracking-[0.04em] text-asphalt"
-                onClick={() => setOpen(false)}
-              >
-                {item.label}
+          {navItems.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              className="group w-fit text-[0.9625rem] font-medium tracking-[0.04em] text-asphalt"
+              onClick={() => setOpen(false)}
+            >
+              {item.label}
               <span className="mt-1 block h-px w-0 bg-krison transition-[width] duration-300 ease-out group-hover:w-full" />
             </a>
           ))}

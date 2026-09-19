@@ -113,33 +113,49 @@ export default function AboutStage() {
     <section
       id="about-us"
       aria-label="About Us"
-      className="relative z-30 w-full overflow-hidden"
-      style={{
-        backgroundColor: "#4169e1",
-      }}
+      className="relative z-30 w-full overflow-hidden bg-[#1875c7]"
     >
-      {/* Seamless atmospheric blend from off-white marquee into Royal Blue (#4169e1) */}
+      {/* Background Image: about_background.webp */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/assets/about_background.webp?v=20260919"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover object-center select-none"
+      />
+
+      {/* Very subtle upper boundary fade to blend into the white / off-white background */}
       <div
-        className="w-full h-20 sm:h-28 md:h-36 pointer-events-none"
+        className="pointer-events-none absolute inset-x-0 top-0 h-10 sm:h-14 md:h-16 z-10"
         style={{
           background:
-            "linear-gradient(to bottom, #f4f3f0 0%, #dfe7f7 18%, #bfd0f3 40%, #8fafee 65%, #628be7 85%, #4169e1 100%)",
+            "linear-gradient(to bottom, #f4f3f0 0%, rgba(244, 243, 240, 0.45) 45%, rgba(244, 243, 240, 0) 100%)",
         }}
         aria-hidden="true"
       />
 
-      {/* Main Full-Width Container — Expansive canvas with symmetrical breathing room from boundary */}
-      <div className="relative mx-auto w-full max-w-[1760px] 2xl:max-w-[1920px] px-6 sm:px-10 lg:px-14 xl:px-20 pt-8 sm:pt-10 lg:pt-12 pb-20 sm:pb-28 lg:pb-36 font-ios">
+      {/* Very subtle lower boundary fade to blend into the white / off-white background */}
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-10 sm:h-14 md:h-16 z-10"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(244, 243, 240, 0) 0%, rgba(244, 243, 240, 0.45) 55%, #f4f3f0 100%)",
+        }}
+        aria-hidden="true"
+      />
+
+      {/* Main Full-Width Container */}
+      <div className="relative z-20 mx-auto w-full max-w-[1760px] 2xl:max-w-[1920px] px-6 sm:px-10 lg:px-14 xl:px-20 pt-16 sm:pt-20 lg:pt-24 pb-16 sm:pb-20 lg:pb-28 font-ios">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-20 items-start">
           
-          {/* LEFT COLUMN: Video Player Placeholder & Subtle Black-Bordered Stats Card */}
+          {/* LEFT COLUMN: Video Player Placeholder & Frosted Stats Card */}
           <div className="flex flex-col">
             {/* 1. Video Player Placeholder */}
             <div
               className="group relative aspect-[16/10] w-full overflow-hidden rounded-2xl sm:rounded-3xl"
               style={{
-                border: "1px solid rgba(0, 0, 0, 0.1)",
-                boxShadow: "0 10px 32px -4px rgba(0, 0, 0, 0.08)",
+                border: "1px solid rgba(255, 255, 255, 0.25)",
+                boxShadow: "0 12px 36px -4px rgba(0, 0, 0, 0.2)",
               }}
             >
               {/* Machine Poster Visual */}
@@ -190,17 +206,17 @@ export default function AboutStage() {
               </div>
             </div>
 
-            {/* 2. Stats Card — Frosted Multi-Tonal Blue with Subtle Blackish Boundary */}
+            {/* 2. Stats Card — Frosted Multi-Tonal Blue Card */}
             <div
               className="mt-6 sm:mt-8 rounded-2xl sm:rounded-3xl p-6 sm:p-7 xl:p-8"
               style={{
                 background:
-                  "linear-gradient(135deg, rgba(255, 255, 255, 0.82) 0%, rgba(220, 239, 254, 0.74) 35%, rgba(182, 219, 248, 0.65) 100%)",
+                  "linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, rgba(230, 243, 255, 0.8) 40%, rgba(205, 230, 252, 0.72) 100%)",
                 backdropFilter: "blur(20px)",
                 WebkitBackdropFilter: "blur(20px)",
-                border: "1px solid rgba(0, 0, 0, 0.08)",
+                border: "1px solid rgba(255, 255, 255, 0.45)",
                 boxShadow:
-                  "0 6px 24px -4px rgba(0, 0, 0, 0.05), 0 1px 3px 0 rgba(0, 0, 0, 0.02)",
+                  "0 8px 32px -4px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.05)",
               }}
             >
               <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center">
@@ -240,27 +256,30 @@ export default function AboutStage() {
           {/* RIGHT COLUMN: Eyebrow, iOS-Style Title, Narrative & Frosted Blue Feature Cards */}
           <div className="flex flex-col">
             {/* Eyebrow */}
-            <div className="flex items-center gap-2 mb-3">
-              <span className="inline-block h-1.5 w-1.5 rounded-full bg-krison" aria-hidden="true" />
-              <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.24em] text-slate-800/80">
+            <div className="flex items-center gap-2.5 mb-3.5">
+              <span
+                className="inline-block h-2 w-2 rounded-full bg-krison shadow-[0_0_8px_rgba(203,4,10,0.8)]"
+                aria-hidden="true"
+              />
+              <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.24em] text-white/90 drop-shadow-sm">
                 ABOUT KRISON
               </p>
             </div>
 
             {/* Display Headline — Roman serif base paired with Italian italic display serif highlights */}
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-[2.85rem] xl:text-[3.25rem] font-normal tracking-[-0.02em] text-slate-950 leading-[1.14]">
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-[2.85rem] xl:text-[3.25rem] font-normal tracking-[-0.02em] text-white leading-[1.14] drop-shadow-[0_2px_12px_rgba(0,0,0,0.18)]">
               Engineers{" "}
-              <span className="text-krison italic">
+              <span className="italic text-white">
                 Precision Machinery
               </span>{" "}
               &amp; Delivers Reliable{" "}
-              <span className="text-krison italic">
+              <span className="italic text-white">
                 Road-Marking Technology
               </span>
             </h2>
 
             {/* Editorial Narrative Paragraph */}
-            <p className="mt-4 sm:mt-5 mb-7 sm:mb-8 text-base sm:text-lg text-slate-800/85 leading-relaxed font-normal max-w-2xl">
+            <p className="mt-4 sm:mt-5 mb-7 sm:mb-8 text-base sm:text-lg text-white/90 leading-relaxed font-normal max-w-2xl drop-shadow-[0_1px_4px_rgba(0,0,0,0.15)]">
               KRISON manufactures and exports high-performance road-marking machinery engineered
               for rigorous pavement marking applications. Built for precision line definition and
               operational reliability, our thermoplastic applicators and pre-heaters empower
