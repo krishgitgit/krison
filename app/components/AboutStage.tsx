@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 
 const ACCORDION_ITEMS = [
@@ -150,60 +149,23 @@ export default function AboutStage() {
           
           {/* LEFT COLUMN: Video Player Placeholder & Frosted Stats Card */}
           <div className="flex flex-col">
-            {/* 1. Video Player Placeholder */}
+            {/* 1. YouTube Video Player */}
             <div
-              className="group relative aspect-[16/10] w-full overflow-hidden rounded-2xl sm:rounded-3xl"
+              className="relative aspect-video w-full overflow-hidden rounded-2xl sm:rounded-3xl bg-slate-950"
               style={{
-                border: "1px solid rgba(255, 255, 255, 0.25)",
-                boxShadow: "0 12px 36px -4px rgba(0, 0, 0, 0.2)",
+                border: "1px solid rgba(255, 255, 255, 0.3)",
+                boxShadow: "0 12px 36px -4px rgba(0, 0, 0, 0.25)",
               }}
             >
-              {/* Machine Poster Visual */}
-              <Image
-                src="/assets/KIHERO.webp"
-                alt="KRISON road marking machinery in operation"
-                fill
-                className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                priority
+              <iframe
+                className="h-full w-full border-0"
+                src="https://www.youtube-nocookie.com/embed/1WEaZaHYJ_g?rel=0&modestbranding=1"
+                title="Road Marking Machine, Hot Thermoplastic Road Marking Machine, Pre Heater — Krison Industries"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                loading="lazy"
               />
-
-              {/* Contrast Film Overlay */}
-              <div className="absolute inset-0 bg-slate-950/25 transition-opacity duration-300 group-hover:opacity-85" />
-
-              {/* Centered Circular Play Button */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <button
-                  type="button"
-                  aria-label="Play KRISON road-marking equipment demonstration video"
-                  className="flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full bg-white transition-all duration-300 ease-out group-hover:scale-108 active:scale-95 cursor-pointer"
-                  style={{
-                    border: "1px solid rgba(0, 0, 0, 0.07)",
-                    boxShadow: "0 8px 24px -2px rgba(0, 0, 0, 0.15)",
-                  }}
-                >
-                  <svg
-                    className="h-7 w-7 sm:h-8 sm:w-8 translate-x-0.5 text-krison"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path d="M8 5.14v14.72a1 1 0 001.52.85l11.4-7.36a1 1 0 000-1.7L9.52 4.29A1 1 0 008 5.14z" />
-                  </svg>
-                </button>
-              </div>
-
-              {/* Bottom-Left Subtitle Overlay Pill */}
-              <div
-                className="absolute bottom-4 left-4 sm:bottom-5 sm:left-5 max-w-[85%] sm:max-w-[78%] rounded-xl bg-black/75 px-4 py-2.5 backdrop-blur-md"
-                style={{
-                  border: "1px solid rgba(0, 0, 0, 0.25)",
-                }}
-              >
-                <p className="text-xs sm:text-sm font-normal text-white/95 leading-snug tracking-normal">
-                  Precision road marking machinery in operation — KRISON Engineering
-                </p>
-              </div>
             </div>
 
             {/* 2. Stats Card — Frosted Multi-Tonal Blue Card */}

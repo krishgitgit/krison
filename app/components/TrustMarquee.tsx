@@ -48,7 +48,6 @@ const COUNTRIES = [
   "Ghana",
   "Denmark",
   "West Indies",
-  "Malawi",
   "Tanzania",
   "Guyana",
   "Sri Lanka",
