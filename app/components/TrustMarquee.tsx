@@ -48,8 +48,6 @@ const COUNTRIES = [
   "Ghana",
   "Denmark",
   "West Indies",
-  "Tanzania",
-  "Guyana",
   "Sri Lanka",
   "Bangladesh",
 ] as const;
