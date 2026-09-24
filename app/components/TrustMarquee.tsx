@@ -42,7 +42,6 @@ const COUNTRIES = [
   "Abu Dhabi",
   "Bahrain",
   "Sharjah",
-  "Ethiopia",
   "Kenya",
   "Lagos",
   "Ghana",
