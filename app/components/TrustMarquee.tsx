@@ -43,7 +43,6 @@ const COUNTRIES = [
   "Bahrain",
   "Sharjah",
   "Kenya",
-  "Lagos",
   "Ghana",
   "Denmark",
   "West Indies",
